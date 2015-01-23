@@ -22,14 +22,15 @@ RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.17/bin/apache-t
     mv apache-tomcat* tomcat
 
 ADD create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
-ADD run.sh /run.sh
+ADD scripts/run.sh /run.sh
 RUN chmod +x /*.sh
-ADD bullseye.war /tomcat/webapps/bullseye.war
-ADD dukeConf-ikanow.xml /dukeConf-ikanow.xml
-#ADD application.conf /application.conf
-#ADD web.xml /web.xml
-ADD tomcat-users.xml /tomcat/conf/tomcat-users.xml
-ADD setenv.sh /tomcat/bin/setenv.sh
+ADD bullseye/bullseye.war /tomcat/webapps/bullseye.war
+ADD conf/dukeConf-ikanow.xml /dukeConf-ikanow.xml
+ADD conf/ikanow-conf.xml /dukeConf-ikanow.xml
+#ADD conf/application.conf /application.conf
+#ADD conf/web.xml /web.xml
+ADD conf/tomcat-users.xml /tomcat/conf/tomcat-users.xml
+ADD scripts/setenv.sh /tomcat/bin/setenv.sh
 RUN chmod +x /tomcat/bin/setnev.sh
 
 EXPOSE 8080
