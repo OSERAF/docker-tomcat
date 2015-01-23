@@ -21,10 +21,10 @@ RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.17/bin/apache-t
     rm apache-tomcat-*.tar.gz && \
     mv apache-tomcat* tomcat
 
-ADD create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
+ADD scripts/create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
 ADD scripts/run.sh /run.sh
 RUN chmod +x /*.sh
-ADD bullseye/bullseye.war /tomcat/webapps/bullseye.war
+ADD bullseye/bullseye-webapp-0.0.1.war /tomcat/webapps/bullseye.war
 ADD conf/dukeConf-ikanow.xml /dukeConf-ikanow.xml
 ADD conf/ikanow-conf.xml /dukeConf-ikanow.xml
 #ADD conf/application.conf /application.conf
