@@ -14,6 +14,7 @@ Editing files in Docker Container
 =============
 
 You can connect to a bash prompt of a running docker container from an ssh session as follows:
+
 1. get the docker container id with sudo docker ps -a (assumes your user is in sudoers)
 2. connect with bash shell as follows:  sudo docker exec -i -t <container id> bash
 
