@@ -1,0 +1,27 @@
+<duke>
+	<schema>
+		<threshold>0.80</threshold>
+		<maybe-threshold>0.75</maybe-threshold>
+		<property type="id">
+			<name>OSERAF:resolve/duke/id</name>
+		</property>
+		<property lookup="true">
+			<name>Name</name>
+			<comparator>no.priv.garshol.duke.comparators.Levenshtein</comparator>
+			<low>0.3</low>
+			<high>0.85</high>
+		</property>
+		<property lookup="true">
+			<name>Type</name>
+			<comparator>no.priv.garshol.duke.comparators.Levenshtein</comparator>
+			<low>0.5</low>
+			<high>0.6</high>
+		</property>
+		<property lookup="true">
+			<name>Dimension</name>
+			<comparator>no.priv.garshol.duke.comparators.Levenshtein</comparator>
+			<low>0.5</low>
+			<high>0.6</high>
+		</property>
+	</schema>
+</duke>
