@@ -31,7 +31,7 @@ ADD conf/ikanow-conf.xml /dukeConf-ikanow.xml
 #ADD conf/web.xml /web.xml
 ADD conf/tomcat-users.xml /tomcat/conf/tomcat-users.xml
 ADD scripts/setenv.sh /tomcat/bin/setenv.sh
-RUN chmod +x /tomcat/bin/setnev.sh
+RUN chmod +x /tomcat/bin/setenv.sh
 
 EXPOSE 8080
 
