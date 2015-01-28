@@ -25,8 +25,9 @@ ADD scripts/create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
 ADD scripts/run.sh /run.sh
 RUN chmod +x /*.sh
 ADD bullseye/bullseye-webapp-0.0.1.war /tomcat/webapps/bullseye.war
-ADD conf/dukeConf-ikanow.xml /dukeConf-ikanow.xml
-ADD conf/ikanow-conf.xml /dukeConf-ikanow.xml
+#ADD conf/dukeConf-ikanow.xml /dukeConf-ikanow.xml
+ADD conf/ikanow-conf.xml /tomcat/bullseye/dukeConf.xml
+ADD conf/bullseye.conf /tomcat/bullseye/bullseye.conf
 #ADD conf/application.conf /application.conf
 #ADD conf/web.xml /web.xml
 ADD conf/tomcat-users.xml /tomcat/conf/tomcat-users.xml
