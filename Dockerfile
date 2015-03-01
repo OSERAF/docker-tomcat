@@ -9,6 +9,7 @@ RUN yum update -y && \
 ENV TOMCAT_MAJOR_VERSION 8
 ENV TOMCAT_MINOR_VERSION 8.0.17
 ENV CATALINA_HOME /tomcat
+ENV CATALINA_OPTS -Dconfig.file=/tomcat/bullseye/bullseye.conf
 
 # Download JDK
 RUN yum -y install java-1.7.0-openjdk-devel
