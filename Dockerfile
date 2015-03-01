@@ -26,7 +26,13 @@ ADD scripts/run.sh /run.sh
 RUN chmod +x /*.sh
 ADD bullseye/bullseye-webapp-0.0.1.war /tomcat/webapps/bullseye.war
 #ADD conf/dukeConf-ikanow.xml /dukeConf-ikanow.xml
-ADD conf/ikanow-conf.xml /tomcat/bullseye/dukeConf.xml
+#ADD conf/ikanow-conf.xml /tomcat/bullseye/dukeConf.xml
+RUN mkdir /tomcat/webapps/bullseye
+RUN cd /tomcat/webapps/bullseye && jar xf /tomcat/webapps/bullseye.war
+ADD conf/web.xml /tomcat/webapps/bullseye/WEB-INF/web.xml
+ADD conf/dukeConf.xml /tomcat/bullseye/dukeConf.xml
+RUN mkdir /tomcat/bullseye/tinkergraph
+ADD conf/tinkergraph.json /tomcat/bullseye/tinkergraph/tinkergraph.json
 ADD conf/bullseye.conf /tomcat/bullseye/bullseye.conf
 #ADD conf/application.conf /application.conf
 #ADD conf/web.xml /web.xml
