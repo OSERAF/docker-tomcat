@@ -22,6 +22,7 @@ RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.17/bin/apache-t
     rm apache-tomcat-*.tar.gz && \
     mv apache-tomcat* tomcat
 
+ADD conf/server.xml /tomcat/conf/server.xml
 ADD scripts/create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
 ADD scripts/run.sh /run.sh
 RUN chmod +x /*.sh
@@ -43,6 +44,5 @@ RUN chmod +x /tomcat/bin/setenv.sh
 #add stealth
 ADD stealth/stealth.war /tomcat/webapps/stealth.war
 
-EXPOSE 8080
-
+EXPOSE 8180
 CMD ["/run.sh"]
