@@ -41,8 +41,6 @@ ADD conf/bullseye.conf /tomcat/bullseye/bullseye.conf
 ADD conf/tomcat-users.xml /tomcat/conf/tomcat-users.xml
 ADD scripts/setenv.sh /tomcat/bin/setenv.sh
 RUN chmod +x /tomcat/bin/setenv.sh
-#add stealth
-ADD stealth/stealth.war /tomcat/webapps/stealth.war
 
 EXPOSE 8180
 CMD ["/run.sh"]
